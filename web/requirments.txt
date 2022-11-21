@@ -1,0 +1,8 @@
+Django==4.1.3
+django-shortcuts==1.6
+gunicorn
+requests
+django-dotenv
+django-storages
+boto3
+mysqlclient

@@ -1,0 +1,26 @@
+PSQL
+1 - sudo apt update
+2 - sudo apt install postgresql postgresql-contrib
+3 - sudo service postgresql start
+4 - sudo -i -u postgres
+5 - psql
+6 - CREATE USER admin WITH PASSWORD 'pwd';
+7 - GRANT ALL PRIVILEGES ON DATABASE *.* to admin;
+8 - sudo apt install libgmp3-dev libpq-dev
+9 - curl -fsS https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo gpg --dearmor -o /usr/share/keyrings/packages-pgadmin-org.gpg
+10 - sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+11 - sudo apt install pgadmin4
+
+1 - Created migrate.sh
+2 - Created docker-compose.yaml
+3 - sudo /etc/init.d/docker start
+4 - RUN INSIDE WEB DIRECTORY
+        docker build -t django_k8s:v1 -f Dockerfile ../web
+5 - RUN IN THE MAIN DIRECTORY
+        docker compose up --build
+        docker compose up
+5 - Comment out web in docker-compose to stop running all time if any changes mades
+6 - docker compose up -d 
+    -d - detach mode (running in background)
+
+
